@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kevin Kelley’s never-punt offense: Pulaski vs. Presbyterian</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f2f4f1;--panel:#fff;--ink:#14213d;--mute:#5b6577;--line:#d5dad3;--pc:#1f3864;--pa:#b8921b;--opp:#8a8f98;--bad:#b03a2e;--good:#2e7d4f;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1624;--panel:#18213a;--ink:#e8ecf4;--mute:#9aa6bd;--line:#2c3856;--pc:#8fb0e8;--pa:#e0b94a;--opp:#7c8496;--bad:#e5786b;--good:#6cc08f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1624;--panel:#18213a;--ink:#e8ecf4;--mute:#9aa6bd;--line:#2c3856;--pc:#8fb0e8;--pa:#e0b94a;--opp:#7c8496;--bad:#e5786b;--good:#6cc08f;color-scheme:dark}
+html{height:100%;scroll-padding-top:60px}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 Barlow,system-ui,sans-serif}
+nav{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--line);display:flex;gap:18px;overflow-x:auto;padding:10px 20px;z-index:5;white-space:nowrap}
+nav a{color:var(--mute);text-decoration:none;font-weight:500}nav a:hover,nav a:focus-visible{color:var(--ink);outline:2px solid var(--pc);outline-offset:3px}
+main{max-width:980px;margin:0 auto;padding:0 20px 60px}
+h1,h2,.big{font-family:"Barlow Condensed",Barlow,sans-serif;font-weight:700;letter-spacing:.01em;line-height:1.05;margin:0}
+h1{font-size:clamp(40px,8vw,76px);margin:44px 0 14px;max-width:14ch}h2{font-size:34px;margin:56px 0 10px}
+p{max-width:64ch;margin:0 0 12px}.mute{color:var(--mute)}
+.bars{margin:26px 0;display:grid;gap:22px}.row b{display:block;font-weight:600;margin-bottom:6px}
+.bar{height:34px;border-radius:3px;display:flex;align-items:center;padding:0 10px;color:#fff;font-family:"Barlow Condensed";font-weight:700;font-size:20px;margin-bottom:5px;transition:width .6s}
+.bar.pc{background:var(--pc)}.bar.opp{background:var(--opp)}
+.bar.pc{color:#fff}@media (prefers-color-scheme:dark){.bar.pc,.bar.opp{color:#0f1624}}
+.gap{display:flex;gap:28px;flex-wrap:wrap;margin:20px 0}.gap div{border-left:4px solid var(--pc);padding-left:12px}
+.gap .big{font-size:44px}.gap .bad{border-color:var(--bad)}.gap .bad .big{color:var(--bad)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:18px;margin:16px 0}
+canvas{max-height:300px}table{border-collapse:collapse;width:100%;font-size:15px}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}th{font-weight:600}
+.scroll{overflow-x:auto}.chips{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+button,select,input[type=search]{font:inherit;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:6px 12px}
+button[aria-pressed=true]{background:var(--pc);color:var(--bg);border-color:var(--pc)}button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--pc);outline-offset:2px}
+input[type=range]{width:100%;accent-color:var(--pc)}.verdict{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px}
+.verdict div{border:1px solid var(--line);border-radius:4px;padding:10px}.yes{border-color:var(--good)!important}.no{border-color:var(--bad)!important}
+.tag{font-size:13px;padding:2px 8px;border-radius:10px;border:1px solid var(--line);white-space:nowrap}.t-c{border-color:var(--good);color:var(--good)}.t-p{border-color:var(--pa);color:var(--pa)}.t-u{color:var(--mute)}
+footer{margin-top:48px;color:var(--mute);font-size:14px}@media (prefers-reduced-motion:reduce){.bar{transition:none}}
+</style></head><body>
+<nav><a href="#top">Overview</a><a href="#fourth">Fourth downs</a><a href="#games">Games</a><a href="#model">Break-even model</a><a href="#media">Overtime SZN archive</a><a href="#notes">Data notes</a></nav>
+<main id="top">
+<h1>Outgained opponents by 865 yards. Lost by 186 points.</h1>
+<p>Kevin Kelley won nine Arkansas titles at Pulaski Academy with an offense that almost never punted. His one season at Presbyterian College (2021) went 2–9. This dashboard tests what the data can and cannot say about why.</p>
+<div class="bars" aria-label="Presbyterian vs opponents, yards and points">
+<div class="row"><b>Total yards, season</b><div class="bar pc" style="width:100%">Presbyterian 5,697</div><div class="bar opp" style="width:84.8%">Opponents 4,832</div></div>
+<div class="row"><b>Points, season</b><div class="bar pc" style="width:68.5%">Presbyterian 404</div><div class="bar opp" style="width:100%">Opponents 590</div></div></div>
+<div class="gap"><div><div class="big">7.1</div>points per 100 yards, Presbyterian</div><div class="bad"><div class="big">12.2</div>points per 100 yards, opponents</div><div><div class="big">46</div>turnovers (34 interceptions, 12 fumbles lost)</div></div>
+<p class="mute">Scoring efficiency, not yardage, explains the gap: relative to a combined average of 9.4 points per 100 yards, the +865-yard edge was worth +82 points, offense scoring below average cost 134, and opponents scoring above average cost 134, for −186. That locates the gap; it doesn’t say what caused it.</p>
+
+<h2 id="fourth">Fourth-down conversion</h2>
+<p>Presbyterian converted about one in three attempts. Pulaski’s 2020 rate, the only Pulaski fourth-down figure found so far, was higher and came on fewer tries per game.</p>
+<div class="panel"><canvas id="c1" role="img" aria-label="Fourth-down conversion rates"></canvas></div>
+<p class="mute">Differences are not statistically significant (Fisher exact p = 0.23 Presbyterian vs. its opponents; p = 0.13 Pulaski 2020 vs. Presbyterian). Pulaski 2020 comes from one Democrat-Gazette article and has no 2019 counterpart.</p>
+
+<h2 id="games">Game by game</h2>
+<div class="chips"><label for="metric" class="mute">Show</label><select id="metric"><option value="m">Point margin</option><option value="a">Fourth-down attempts and conversions</option></select></div>
+<div class="panel"><canvas id="c2" role="img" aria-label="Presbyterian game results"></canvas></div>
+<div class="panel scroll"><table id="gt"></table></div>
+<p class="mute">Across 11 games, margin correlates −0.50 with attempts (permutation p = 0.12) and +0.42 with conversion rate (p = 0.19). Removing the two wins over non-FCS opponents flips the first to +0.30. Trailing teams take more fourth downs, so these numbers describe game state, not strategy.</p>
+
+<h2 id="model">What you must believe</h2>
+<p>Going for it beats punting when a conversion’s gain outweighs a failure’s cost. Let r be the cost of a failed attempt divided by the gain from a conversion; the break-even rate is r ÷ (1 + r). Move the slider to see which observed rates clear the bar.</p>
+<div class="panel"><label for="r">Cost of failure ÷ gain from success (r): <strong id="rv">1.00</strong>. Break-even rate: <strong id="pv">50%</strong></label>
+<input id="r" type="range" min="0.2" max="3" step="0.05" value="1"><div class="verdict" id="vd"></div></div>
+<p class="mute">The ratio changes with field position and distance, and estimating it needs play-by-play data this project doesn’t have yet. Presbyterian’s 34.5% pays off only if a failure costs about half what a conversion gains (r ≤ 0.53); Pulaski’s 47.0% pays off up to r ≈ 0.89.</p>
+
+<h2 id="media">Overtime SZN archive</h2>
+<p>Confirmed appearances are kept apart from possible matches. “Possible” means the person is documented in the programs but no source places them on screen.</p>
+<div class="chips" id="chips"></div><input type="search" id="q" placeholder="Search names, teams, series" aria-label="Search archive" style="width:100%;max-width:360px">
+<div class="panel scroll"><table id="mt"></table></div>
+
+<h2 id="notes">Data notes</h2>
+<div class="panel"><ul style="margin:0;padding-left:20px">
+<li>An earlier offense sheet held opponents’ numbers, not Presbyterian’s. It was relabeled and replaced for six games; five games are still missing.</li>
+<li>The St. Andrews game was the September 4 season opener, not September 22.</li>
+<li>Presbyterian punts are 13–14 by two sources, while game rows sum to 4; the count is unresolved.</li>
+<li>Pulaski 2019 fourth-down, turnover and defensive data are missing. Nothing here is estimated.</li></ul></div>
+<footer>Sources: Presbyterian athletics statistics, Wikipedia box scores, Action Network, Post and Courier, Arkansas Democrat-Gazette, CBS/AP, SBLive, Gatorade. Full list in the project workbook.</footer>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+const G=[["St. Andrews","Sep 4",84,43,5,4],["Fort Lauderdale","Sep 11",68,3,4,1],["Campbell","Sep 18",0,72,8,2],["Dayton","Sep 25",43,63,8,2],["Morehead State","Oct 9",30,38,12,4],["Davidson","Oct 16",35,70,8,3],["San Diego","Oct 23",28,69,5,1],["Stetson","Oct 30",14,56,10,1],["Valparaiso","Nov 6",55,65,8,4],["Marist","Nov 13",32,57,7,3],["St. Thomas","Nov 20",15,54,9,4]];
+const RT=[["Pulaski 2020",31,66],["Presbyterian 2021",29,84],["PC opponents 2021",18,38]];
+const M=[["Kevin Kelley","Head coach; Pulaski and Presbyterian","Confirmed","Subject of both To The House series"],["Steve Raum","Overtime producer","Confirmed","Filmed Pulaski games for To The House season 1"],["Braden Bratcher","Pulaski quarterback (2019)","Possible","Filmed per Democrat-Gazette; on-screen appearance unconfirmed"],["Harrison Lane","Pulaski sophomore linebacker (2019)","Possible","Filmed per Democrat-Gazette; on-screen appearance unconfirmed"],["Joe Himon (Joseph Himon II)","Pulaski running back; later Northwestern","Possible","Documented Pulaski player; no source ties him to an episode"],["Futa Shinkawa","Pulaski linebacker (2020)","Possible","Documented Pulaski player; no source ties him to an episode"],["Jalyn Witcher","Pulaski WR (2020), Presbyterian WR (2021)","Possible","Played for both programs; no source ties him to the series"],["Jayden Kelley","Unknown","Unverified","No match found in searches"],["Savannah Goodwin","Unknown","Unverified","No match found in searches"],["To The House, season 1","15 episodes; Pulaski 2019","Confirmed","Premiere date disputed (Dec. 2019 release vs. about May 9, 2020)"],["To The House, Presbyterian season","12 parts; released summer 2022","Confirmed","Secondary source only (student op-ed); not checked on YouTube"],["To The House, season 2","Listed in a YouTube description","Unverified","Season contents and episode count unknown"]];
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+let c1,c2;
+function draw(){const pc=css("--pc"),pa=css("--pa"),op=css("--opp"),bad=css("--bad"),good=css("--good"),ink=css("--ink");Chart.defaults.color=ink;Chart.defaults.font.family="Barlow";
+c1&&c1.destroy();c2&&c2.destroy();
+c1=new Chart("c1",{type:"bar",data:{labels:RT.map(r=>r[0]),datasets:[{data:RT.map(r=>+(r[1]/r[2]*100).toFixed(1)),backgroundColor:[pa,pc,op]}]},options:{plugins:{legend:{display:false},tooltip:{callbacks:{label:i=>RT[i.dataIndex][1]+" of "+RT[i.dataIndex][2]+" ("+i.raw+"%)"}}},scales:{y:{beginAtZero:true,max:70,title:{display:true,text:"Conversion rate (%)"}}}}});
+const m=document.getElementById("metric").value;
+c2=new Chart("c2",{type:"bar",data:{labels:G.map(g=>g[0]),datasets:m=="m"?[{label:"Point margin",data:G.map(g=>g[2]-g[3]),backgroundColor:G.map(g=>g[2]>g[3]?good:bad)}]:[{label:"Attempts",data:G.map(g=>g[4]),backgroundColor:pc},{label:"Conversions",data:G.map(g=>g[5]),backgroundColor:pa}]},options:{plugins:{legend:{display:m!="m"}},scales:{x:{ticks:{maxRotation:50}}}}});}
+document.getElementById("metric").onchange=draw;
+document.getElementById("gt").innerHTML="<tr><th>Opponent</th><th>Date</th><th>Score (PC–Opp)</th><th>Fourth downs</th></tr>"+G.map(g=>`<tr><td>${g[0]}</td><td>${g[1]}</td><td>${g[2]}–${g[3]}</td><td>${g[5]} of ${g[4]}</td></tr>`).join("");
+const r=document.getElementById("r");function upd(){const v=+r.value,p=v/(1+v);document.getElementById("rv").textContent=v.toFixed(2);document.getElementById("pv").textContent=(p*100).toFixed(1)+"%";
+document.getElementById("vd").innerHTML=RT.map(t=>{const x=t[1]/t[2],ok=x>p;return `<div class="${ok?"yes":"no"}"><strong>${t[0]}: ${(x*100).toFixed(1)}%</strong><br>${ok?"Above break-even: going for it pays":"Below break-even: punting pays"}</div>`}).join("")}
+r.oninput=upd;upd();
+let f="All";const cl={Confirmed:"t-c",Possible:"t-p",Unverified:"t-u"};
+function mt(){const q=document.getElementById("q").value.toLowerCase();document.getElementById("chips").innerHTML=["All","Confirmed","Possible","Unverified"].map(k=>`<button aria-pressed="${k==f}" data-k="${k}">${k}</button>`).join("");
+document.querySelectorAll("#chips button").forEach(b=>b.onclick=()=>{f=b.dataset.k;mt()});
+document.getElementById("mt").innerHTML="<tr><th>Name or title</th><th>Role or context</th><th>Status</th><th>Evidence</th></tr>"+M.filter(x=>(f=="All"||x[2]==f)&&x.join(" ").toLowerCase().includes(q)).map(x=>`<tr><td>${x[0]}</td><td>${x[1]}</td><td><span class="tag ${cl[x[2]]}">${x[2]}</span></td><td>${x[3]}</td></tr>`).join("")}
+document.getElementById("q").oninput=mt;mt();draw();
+matchMedia("(prefers-color-scheme:dark)").addEventListener("change",draw);
+</script></body></html>
